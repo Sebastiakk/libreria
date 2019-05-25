@@ -11,6 +11,13 @@ import { LibrosComponent } from './libros/libros.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatMenuModule } from '@angular/material/menu';
+import { EditarLibroComponent } from './editar-libro/editar-libro.component';
+
 
 
 
@@ -18,7 +25,8 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
     AppComponent,
     BarComponent,
-    LibrosComponent
+    LibrosComponent,
+    EditarLibroComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,12 @@ import { MatInputModule } from '@angular/material/input';
     MatListModule,
     MatCardModule,
     MatTabsModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    FormsModule,
+    HttpClientModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

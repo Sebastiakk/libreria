@@ -1,0 +1,35 @@
+<form #f="ngForm" class="row" (ngSubmit)="editar_libro()">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Editar libro</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="col s12 m3" appearance="outline">
+        <mat-label>Código (ISBM)</mat-label>
+        <input name="codigo" required [(ngModel)]="form.isbm" matInput type="text">
+      </mat-form-field>
+      <mat-form-field class="col s12 m3" appearance="outline">
+        <mat-label>Titulo</mat-label>
+        <input name="titulo" required [(ngModel)]="form.title" matInput type="text">
+      </mat-form-field>
+      <mat-form-field class="col s12 m3" appearance="outline">
+        <mat-label>Autor</mat-label>
+        <input name="autor" required [(ngModel)]="form.author" matInput type="text">
+      </mat-form-field>
+      <mat-form-field class="col s12 m3" appearance="outline">
+        <mat-label>Fecha de publicación</mat-label>
+        <input readonly name="fecha" required [(ngModel)]="form.created" matInput [matDatepicker]="myDatepicker">
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="col s12 m12" appearance="outline">
+        <mat-label>Descripción</mat-label>
+        <textarea name="descripcion" required [(ngModel)]="form.description" matInput></textarea>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [disabled]="f.invalid" mat-button type="submit" color="primary">Actualizar</button>
+
+    </mat-card-actions>
+  </mat-card>
+</form>
