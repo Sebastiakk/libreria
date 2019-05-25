@@ -25,6 +25,7 @@ export class EditarLibroComponent implements OnInit {
 
   editar_libro() {
     this.servicio.editar_libro(this.idLibro, this.form).subscribe((data: any) => {
+      this.router.navigate(['libros']);
       Swal.correcto('Libro actualizado');
     });
   }

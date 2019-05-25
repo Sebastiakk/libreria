@@ -31,12 +31,18 @@
                 {{item.created | date: 'dd/MM/yyyy'}}
               </td>
               <td>
-                <button mat-button [matMenuTriggerFor]="menu">
+                <button mat-icon-button color="primary" [matMenuTriggerFor]="menu">
                   <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                  <button mat-menu-item (click)="eliminar(i)">Eliminar</button>
-                  <button mat-menu-item [routerLink]="['/libro',item.id]">Editar</button>
+                  <button mat-menu-item [routerLink]="['/libro',item.id]">
+                    <mat-icon color="primary">mode_edit</mat-icon>
+                    Editar
+                  </button>
+                  <button mat-menu-item (click)="eliminar(i)">
+                    <mat-icon style="color:red">delete</mat-icon>
+                    Eliminar
+                  </button>
                 </mat-menu>
               </td>
             </tr>
